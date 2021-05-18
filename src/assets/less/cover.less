@@ -1,0 +1,375 @@
+//覆盖element自带样式
+@colorBlue :#4977FC;
+@colorBlueDeep :#2059FF;
+@colorBlueTransparent: rgba(73, 119, 252, .2);
+@fontSize : 0.7rem;
+//左侧导航
+.el-menu{
+  border-right: 0;
+  background-color: transparent;
+  &::after,&::before{
+    display: none;
+  }
+  .el-menu-item{
+    padding:0;
+    font-size:@fontSize;
+    margin:0.8rem 0 0.8rem 1rem;
+    height:2.5rem;
+    line-height: 2.5rem;
+    border-radius: 1.5rem 0 0 1.5rem;
+    &.is-active{
+      color: @colorBlue;
+      background-color: @colorBlueTransparent; 
+    }
+    &:hover, &:focus{
+      background-color: @colorBlueTransparent;
+    }
+    
+  }
+  .el-submenu{
+    &.is-active{
+      background-color: #f0f0f0;
+    }
+    .el-menu-item{
+      min-width: 0;
+      margin:0.5rem 0 0.5rem 1.6rem;
+      height:2.2rem;
+      line-height: 2.2rem;
+    }
+    .el-submenu__title{
+      height:2.5rem;
+      line-height: 3rem;
+      font-size:@fontSize;
+      padding: 0;
+      margin-left:1rem;
+      .el-submenu__icon-arrow{
+        right:1rem;
+        font-size: 0.6rem;
+        margin-top: -0.1rem;
+      }
+    }
+  }
+  .el-submenu__title:focus, .el-submenu__title:hover{
+    background-color: transparent;
+  }
+}
+//顶部tab
+.el-tabs--card{
+  >.el-tabs__header{
+    border-bottom: 0;
+    background-color: transparent;
+    margin:0;
+    .el-tabs__nav{
+      border:none;
+      border-radius: 0;
+    }
+    .el-tabs__item{
+      border:none;
+      padding:0 0.8rem;
+      height:2.1rem;
+      line-height: 2.1rem;
+      font-size: 0.75rem;
+      margin-right:0.2rem;
+      background-color: rgba(255,255,255,.6);
+      border-radius: 0.6rem 0.6rem 0 0;
+      vertical-align: bottom;
+      color:#595959;
+      &:hover{
+        color: inherit;
+      }
+      &.is-active{
+        height:2.6rem;
+        line-height: 2.6rem;
+        background-color: #fff;
+        color: #595959;
+      }
+    }
+  }
+  .el-tabs__content{
+    background-color: #fff;
+    padding:1rem;
+    box-sizing: border-box;
+    height:0;
+    display:none;
+  }
+}
+.el-input{
+  font-size: 0.7rem;
+}
+.el-input__inner{
+  height:1.7rem;
+  line-height: 1.7rem;
+  padding:0 0.6rem;
+}
+.el-input--suffix .el-input__inner{
+  padding-right: 1.5rem;
+}
+.el-input__icon{
+  width:1.3rem;
+  line-height: 1.7rem;
+}
+.el-select .el-input .el-select__caret{
+  font-size: 0.7rem;
+}
+// button
+.el-button{
+  padding:0.5rem 0.7rem;
+  color:@colorBlue;
+  border-color: @colorBlue;
+  font-size: 0.7rem;
+  &:hover, &:focus{
+    color: inherit;
+    background-color: inherit;
+  }
+}
+.el-button--primary{
+  background-color: @colorBlueDeep;
+  border-color: @colorBlueDeep;
+  color:#fff;
+  &:hover, &:focus{
+    color: #fff;
+    background-color: @colorBlueDeep;
+  }
+}
+.el-button--text{
+  color:@colorBlue;
+  border:0;
+  opacity: .9;
+  &:hover, &:focus{
+    color: @colorBlue;
+    opacity: 1;
+  }
+}
+.el-table{
+  font-size: 0.7rem;
+  background-color: transparent;
+  .cell{
+    line-height: 1.2rem;
+  }
+  th, tr{
+    background-color: transparent;
+  }
+  thead{
+    color: #000;
+    font-size: 0.75rem;
+  }
+  td,th{
+    padding:0.5rem 0;
+  }
+  td{
+    border-bottom: 0.05rem solid #f0f0f0;
+  }
+  &::before{
+    height: 0;
+  }
+}
+
+.el-pagination{
+  text-align: center;
+  padding:1.3rem;
+  &::after, &::before{
+    display: none;
+  }
+  button, span:not([class*=suffix]){
+    font-size: 0.65rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+  }
+  .el-pagination__total{
+    margin-right: 0.5rem;
+  }
+  .el-pagination__sizes{
+    margin-right: 0.5rem;
+  }
+  .el-select .el-input{
+    width:5.2rem;
+    margin:0 0.3rem;
+    .el-input__inner{
+      padding-right: 1.2rem;
+      font-size: 0.65rem;
+      padding-left:0.4rem;
+      height: 1.4rem;
+      line-height: 1.4rem;
+    }
+  }
+  .el-input--mini .el-input__icon{
+    line-height: 1.4rem;
+  }
+  .btn-prev{
+    padding-right: 0.6rem;
+    background-size: 0.8rem;
+  }
+  .btn-next{
+    background-size: 0.8rem;
+  }
+  .el-pager{
+    li{
+      padding:0 0.2rem;
+      font-size: 0.65rem;
+      height: 1.4rem;
+      line-height: 1.4rem;
+    }
+  }
+  .el-pagination__jump{
+    margin-left:1.2rem;
+  }
+  .el-pagination__editor{
+    line-height: 0.9rem;
+    padding:0 0.1rem;
+    height:1.4rem;
+    margin:0 0.1rem;
+    &.el-input{
+      width:2.5rem;
+      .el-input__inner{
+        height:1.4rem;
+        padding:0 0.2rem;
+      }
+    }
+  }
+}
+.el-dialog{
+  .el-dialog__header{
+    padding:0.6rem 1rem;
+    background-color: @colorBlue;
+    
+    .el-dialog__title{
+      color:#fff;
+      font-size: 0.85rem;
+      line-height: 1.2;
+      opacity: 0.9;
+
+    }
+    .el-dialog__headerbtn{
+      top:0.5rem;
+      right:1rem;
+      font-size: 1.5rem;
+      opacity: 0.9;
+      .el-dialog__close{
+        color:#fff;
+        font-weight: lighter;
+        &::before{
+          content: '\e78d';
+        }
+      }
+    }
+  }
+  .el-dialog__body{
+    padding:0.3rem 1rem;
+    font-size: 0.7rem;
+  }
+  .el-dialog__footer{
+    padding:1rem 1rem 2.4rem;
+    text-align: center;
+    .el-button{
+      padding:0.5rem 1.4rem;
+      background-color: #7094FD;
+      border-color:#7094FD;
+    }
+    .el-button--default{
+      background-color: #fff;
+      border-color: #E5E5E5;
+      color:#858585;
+    }
+  }
+}
+.el-button+.el-button{
+  margin-left: 0.7rem;
+}
+.el-divider__text{
+  padding:0 1.6rem;
+  font-size: 0.7rem;
+}
+.el-divider--horizontal{
+  margin:1rem 0;
+}
+.el-popper[x-placement^=bottom]{
+  margin-top: 0.6rem;
+}
+.el-select-dropdown{
+  margin:0.3rem 0;
+}
+.el-select-dropdown__wrap{
+  max-height: 14rem;
+}
+.el-select-dropdown__list{
+  padding:0.3rem 0;
+}
+.el-select-dropdown__item{
+  font-size: 0.7rem;
+  padding:0 1rem;
+  height:1.6rem;
+  line-height: 1.6rem;
+  &.selected{
+    color: @colorBlue;
+  }
+}
+.el-form-item{
+  margin-bottom: 0.7rem;
+  .el-form-item__label{
+    padding:0 0.6rem 0 0 ;
+    font-size: 0.7rem;
+    line-height: 2rem;
+    color:#858585;
+  }
+  .el-form-item__content{
+    line-height: 2rem;
+    font-size: 0.7rem;
+  }
+}
+.el-range-editor.el-input__inner{
+  padding:0.1rem 0.5rem;
+  width:18rem;
+  font-size: 0.7rem;
+  .el-range-input{
+    font-size: 0.7rem;
+  }
+  .el-range__icon{
+    font-size: 0.7rem;
+    margin-left:-0.3rem;
+    line-height: 1.5rem;
+  }
+  .el-range-separator{
+    padding:0 0.2rem;
+    line-height: 1.6rem;
+    font-size: 0.7rem;
+  }
+  .el-range__close-icon{
+    font-size: 0.7rem;
+    width:1.2rem;
+    line-height: 1.6rem;
+  }
+}
+.el-textarea{
+  font-size:  0.7rem;
+  .el-textarea__inner{
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.2rem;
+    font-family: inherit;
+  }
+}
+.el-radio-button__orig-radio:checked+.el-radio-button__inner{
+  background-color: @colorBlue;
+  box-shadow: -1px 0 0 0 @colorBlue;
+}
+.el-form-item__error{
+  font-size: 0.6rem;
+  padding-top:0.04rem;
+}
+.el-dropdown-menu__item{
+  line-height: 1.7rem;
+  padding: 0 1rem;
+  margin: 0;
+  font-size: 0.7rem;
+}
+.el-upload-list__item{
+  font-size: 0.65rem;
+}
+.el-upload-list__item .el-icon-close-tip{
+  opacity: 0;
+}
+.el-message-box__message p{
+  word-break: break-all;
+}
+.el-tooltip__popper{
+  max-width: 50%;
+}
